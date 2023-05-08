@@ -21,6 +21,9 @@ public class GetRandomBlessing {
         blessing.put(12, PotionEffectType.CONDUIT_POWER);
         blessing.put(13, PotionEffectType.DOLPHINS_GRACE);
         blessing.put(14, PotionEffectType.DAMAGE_RESISTANCE);
+        blessing.put(15, PotionEffectType.INCREASE_DAMAGE);
+        // Silk touch id: 16
+        // Soul Speed id: 17
     }
 
     public static RanPotion getRandomBlessing(){
