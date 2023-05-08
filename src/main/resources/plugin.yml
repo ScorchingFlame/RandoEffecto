@@ -1,0 +1,24 @@
+name: Randoeffecto
+version: ${project.version}
+main: me.scorchingflame.randoeffecto.Randoeffecto
+api-version: 1.19
+authors: [ScorchingFlame]
+description: idk bruv
+commands:
+   reloadPlayerData:
+      description: Reloads Player Data
+      usage: /<command>
+      permission: randoeffecto.reloadPlayerData
+
+   addMeSilk:
+      description: Adds you to the silk touch list
+      usage: /<command>
+
+   removeMeSilk:
+         description: removes you to the silk touch list
+         usage: /<command>
+
+permissions:
+    randoeffecto.reloadPlayerData:
+        description: Allows you to reload player data
+        default: op
