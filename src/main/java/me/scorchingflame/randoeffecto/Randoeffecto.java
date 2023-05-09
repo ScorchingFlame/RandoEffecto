@@ -1,9 +1,7 @@
 package me.scorchingflame.randoeffecto;
 
 import me.scorchingflame.randoeffecto.Extra.*;
-import me.scorchingflame.randoeffecto.commands.addMeSilk;
-import me.scorchingflame.randoeffecto.commands.reloadPlayerData;
-import me.scorchingflame.randoeffecto.commands.removeMeSilk;
+import me.scorchingflame.randoeffecto.commands.*;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,6 +24,8 @@ public final class Randoeffecto extends JavaPlugin {
         Objects.requireNonNull(getCommand("reloadPlayerData")).setExecutor(new reloadPlayerData());
         Objects.requireNonNull(getCommand("addMeSilk")).setExecutor(new addMeSilk());
         Objects.requireNonNull(getCommand("removeMeSilk")).setExecutor(new removeMeSilk());
+        Objects.requireNonNull(getCommand("addMeSoul")).setExecutor(new addMeSoul());
+        Objects.requireNonNull(getCommand("removeMeSoul")).setExecutor(new removeMeSoul());
     }
 
     @Override

@@ -13,12 +13,28 @@ commands:
    addMeSilk:
       description: Adds you to the silk touch list
       usage: /<command>
+      permission: randoeffecto.test
 
    removeMeSilk:
          description: removes you to the silk touch list
          usage: /<command>
+         permission: randoeffecto.test
+
+   addMeSoul:
+         description: Adds you to the soul list
+         usage: /<command>
+         permission: randoeffecto.test
+
+   removeMeSoul:
+         description: removes you to the soul list
+         usage: /<command>
+         permission: randoeffecto.test
 
 permissions:
     randoeffecto.reloadPlayerData:
         description: Allows you to reload player data
+        default: op
+
+    randoeffecto.test:
+        description: just testing purposes
         default: op
