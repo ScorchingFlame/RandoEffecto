@@ -8,10 +8,10 @@ import static me.scorchingflame.randoeffecto.CustomEffects.Blessings.SoulSpeedBl
 
 public class ApplyEffect {
     public static void applyEffect(Player player, Effects effects){
-        if (effects.potionEffectType != null){
-            player.addPotionEffect(new PotionEffect(effects.potionEffectType, effects.duration, effects.amplifier, false, false, false));
+        if (effects.getPotionEffectType() != null){
+            player.addPotionEffect(new PotionEffect(effects.getPotionEffectType(), effects.getDuration(), effects.getAmplifier(), false, false, false));
         }else{
-            Integer id = effects.id;
+            Integer id = effects.getId();
             switch (id){
                 case 16:
                     currentSilkHolders.add(player);

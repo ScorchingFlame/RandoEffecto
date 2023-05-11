@@ -21,7 +21,7 @@ public class PoisonAttackEntity implements Listener {
             if (currentPoisonAttackEntityHolders.contains(player)){
                 if (event.getEntity() instanceof LivingEntity){
                     LivingEntity livingEntity = (LivingEntity) event.getEntity();
-                    livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 20000, 0));
+                    livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 20000, 0, false, false, false));
                 }
             }
         }

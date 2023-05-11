@@ -16,6 +16,7 @@ import static me.scorchingflame.randoeffecto.Extra.Boots.materialListOfBoots;
 public class SoulSpeedBles implements Listener {
     public static List<Player> currentSoulHolders = new ArrayList<>();
     // TODO: Add the effect if the item was took from chest and vice versa
+    // TODO: Change All the blessings into using Map and add amplifier feature to all the blessings
     @EventHandler
     public void onPlayerPickupItem(PlayerPickupItemEvent event) {
         Player player = event.getPlayer();

@@ -8,7 +8,7 @@ public class Effects {
     private final boolean customEffect;
     private final Integer amplifier;
     private final Integer duration;
-
+    // TODO: Make the storage as json with the help of GSON and use the variable like Map<Player, List<Effects>> and save it
     public Effects(Integer id, PotionEffectType potionEffectType, Integer amplifier){
         this.id = id;
         this.potionEffectType = potionEffectType;

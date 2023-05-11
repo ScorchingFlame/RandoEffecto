@@ -118,43 +118,74 @@ effects:
     name: Scorpion's Sting
     description: Randomly inflicts instant damage.
     type: 2
+    loop-duration: 240
   29:
     name: Cerberus' Bite
     description: Reduces total hearts by 2 and stacks with more effects.
     type: 2
+    hearts-take-away: 2
   30:
+    # Amplifier of this effect affects the effect's strength
     name: Witch's Brew
     description: Randomly inflicts either wither or poison for 3 seconds.
     type: 2
+    loop-duration: 240
+    effect-duration: 3 # in seconds
   31:
     name: Curse of curses
     description: Adds curse of binding or curse of vanishing to tools or armor of the user.
     type: 2
   32:
+    # Amplifier of this effect affects the duration of loops. Max amplifier is 3
     name: Moth's Blindness
     description: Gives blindness at random intervals.
     type: 2
+    effect-duration: 3 # in seconds...
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
   33:
+    # Amplifier of this effect multiples with the damage the player receives. Max amplifer is 3
     name: Karma!
     description: Takes damage when attacking an entity.
     type: 2
+    damage: 2 # Number of hearts * 2. It multiples with the ampifier for example if the amplifer is 2 and then will be multiplied with the damage. 2 * 2 = 4 which means the damage is 2 whole hearts
   34:
+     # Amplifier of this effect affects the duration of the effect. Amplifer max is 3
     name: Toad's Nausea
     description: Gives players nausea for short bursts at random intervals.
     type: 2
+    loop-duration: 240
+    effect-duration: 3 # in seconds... amplifier multiples it
   35:
+    # no amplifier
     name: Bat's Confusion
     description: Gives players blindness for a random amount of time at random intervals.
     type: 2
+    min: 5 # Minimum number of seconds. The random duration will be within the numbers mentioned in min and max
+    max: 10 # Maximum number of seconds
+    loop-duration: 240
   36:
+  # Amplifier of this effect affects the duration of loops. Max amplifier is 3
     name: Curse of clumsiness
     description: Randomly switches the player's hotbar items between slots.
     type: 2
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
   37:
+  # Amplifier of this effect affects the duration of loops. Max amplifier is 3
     name: Zeus's Nemesis
     description: Occasionally gets struck by lightning.
     type: 2
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
   38:
+  # Amplifier of this effect affects the duration of loops. Max amplifier is 3
     name: Slippery hands
     description: Curse of slippery hands that makes the player throw out the item they're holding every few minutes.
     type: 2
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
