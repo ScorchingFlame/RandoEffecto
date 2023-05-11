@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static me.scorchingflame.randoeffecto.Randoeffecto.currentSilkHolders;
+import static me.scorchingflame.randoeffecto.CustomEffects.Blessings.SilkEffect.currentSilkHolders;
 
 public class removeMeSilk implements CommandExecutor {
     @Override

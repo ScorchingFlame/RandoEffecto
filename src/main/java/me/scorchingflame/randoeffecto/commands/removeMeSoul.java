@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-import static me.scorchingflame.randoeffecto.Randoeffecto.currentSoulHolders;
+import static me.scorchingflame.randoeffecto.CustomEffects.Blessings.SoulSpeedBles.currentSoulHolders;
 
 public class removeMeSoul implements CommandExecutor {
     @Override

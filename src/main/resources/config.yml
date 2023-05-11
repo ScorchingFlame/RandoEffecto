@@ -1,0 +1,157 @@
+chance-blessings: 50 #It should be within 0-100. It will calculate the chance of curse automatically
+
+# type 1 means blessing, type 2 means curse
+effects:
+  1:
+    name: Vitality
+    description: Grants natural health regeneration to the player.
+    type: 1
+  2:
+    name: Swiftstep
+    description: Increases the player's movement speed.
+    type: 1
+  3:
+    name: Flameguard
+    description: Provides immunity to fire and lava damage.
+    type: 1
+  4:
+    name: Owl's Vision
+    description: Night vision effect.
+    type: 1
+  5:
+    name: Hercules' Might
+    description: Strength effect.
+    type: 1
+  6:
+    name: Kangaroo's Leap
+    description: Jump boost effect.
+    type: 1
+  7:
+    name: Dolphin's Domain
+    description: Water breathing effect.
+    type: 1
+  8:
+    name: Chameleon's Cloak
+    description: Invisibility effect.
+    type: 1
+  9:
+    name: Jackalope's Finesse
+    description: Haste effect.
+    type: 1
+  10:
+    name: Titan's Endurance
+    description: Health boost effect.
+    type: 1
+  11:
+    name: Siren's Song
+    description: Saturation effect.
+    type: 1
+  12:
+    name: Champion's Glory
+    description: Hero of the village effect.
+    type: 1
+  13:
+    name: Leviathan's Dominion
+    description: Conduit power effect.
+    type: 1
+  14:
+    name: Manatee's Grace
+    description: Dolphin's grace effect.
+    type: 1
+  15:
+    name: Ankylosaur's Fortitude
+    description: Resistance effect.
+    type: 1
+  16:
+    name: Master Miner
+    description: Silk Hands effect (Rank Locked).
+    type: 1
+  17:
+    name: Soul Strider
+    description: Soul speed effect for boots.
+    type: 1
+  18:
+    name: Fortunate Explorer
+    description: Fortune effect for pickaxes.
+    type: 1
+  19:
+    name: Fireworks Fanatic
+    description: Random firework effect.
+    type: 1
+    loop-duration: 240 # in seconds
+  20:
+    name: Venomous bite
+    description: Occasionally poisons the player's target with attacks.
+    type: 1
+  21:
+    name: Tortoise's Plod
+    description: Slowness effect.
+    type: 2
+  22:
+    name: Chickens's Descent
+    description: Slow falling effect.
+    type: 2
+  23:
+    name: Black Cat's Hex
+    description: Bad luck effect
+    type: 2
+  24:
+    name: Firefly's Glow
+    description: Glowing effect
+    type: 2
+  25:
+    name: Minotaur's Weakness
+    description: Weakness effect
+    type: 2
+  26:
+    name: Black Cat's Hex
+    description: Bad luck effect
+    type: 2
+  27:
+    name: Vulture's Hunger
+    description: Hunger effect at random intervals.
+    type: 2
+  28:
+    name: Scorpion's Sting
+    description: Randomly inflicts instant damage.
+    type: 2
+  29:
+    name: Cerberus' Bite
+    description: Reduces total hearts by 2 and stacks with more effects.
+    type: 2
+  30:
+    name: Witch's Brew
+    description: Randomly inflicts either wither or poison for 3 seconds.
+    type: 2
+  31:
+    name: Curse of curses
+    description: Adds curse of binding or curse of vanishing to tools or armor of the user.
+    type: 2
+  32:
+    name: Moth's Blindness
+    description: Gives blindness at random intervals.
+    type: 2
+  33:
+    name: Karma!
+    description: Takes damage when attacking an entity.
+    type: 2
+  34:
+    name: Toad's Nausea
+    description: Gives players nausea for short bursts at random intervals.
+    type: 2
+  35:
+    name: Bat's Confusion
+    description: Gives players blindness for a random amount of time at random intervals.
+    type: 2
+  36:
+    name: Curse of clumsiness
+    description: Randomly switches the player's hotbar items between slots.
+    type: 2
+  37:
+    name: Zeus's Nemesis
+    description: Occasionally gets struck by lightning.
+    type: 2
+  38:
+    name: Slippery hands
+    description: Curse of slippery hands that makes the player throw out the item they're holding every few minutes.
+    type: 2

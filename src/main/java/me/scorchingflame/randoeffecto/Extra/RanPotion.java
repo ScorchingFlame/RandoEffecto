@@ -1,11 +1,9 @@
 package me.scorchingflame.randoeffecto.Extra;
 
-import org.bukkit.potion.PotionEffectType;
-
 public class RanPotion {
-    PotionEffectType potion;
+    Effects potion;
     Integer keyNo;
-    public RanPotion(Integer keyNo1, PotionEffectType potion1){
+    public RanPotion(Integer keyNo1, Effects potion1){
         this.potion = potion1;
         this.keyNo = keyNo1;
     }

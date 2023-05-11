@@ -1,19 +1,20 @@
-package me.scorchingflame.randoeffecto.Extra;
+package me.scorchingflame.randoeffecto.CustomEffects.Blessings;
 
 import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import static me.scorchingflame.randoeffecto.Randoeffecto.currentSilkHolders;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SilkEffect implements Listener {
+
+    public static List<Player> currentSilkHolders = new ArrayList<>();
 
     @EventHandler
     public void onBlockBreakEvent(BlockBreakEvent event){

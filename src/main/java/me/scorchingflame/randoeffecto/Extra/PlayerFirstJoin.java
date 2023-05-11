@@ -16,7 +16,7 @@ public class PlayerFirstJoin implements Listener {
         uuid = event.getPlayer().getUniqueId().toString();
         if (playerDataF.configuration.getConfigurationSection("playerdata." + uuid) == null){
             RanPotion i = GetRandomBlessing.getRandomBlessing();
-            event.getPlayer().addPotionEffect(new PotionEffect(i.potion, -1, 0));
+//            event.getPlayer().addPotionEffect(new PotionEffect(i.potion, -1, 0));
             event.getPlayer().sendMessage("You suck really");
             List<String> list = new ArrayList<>();
             list.add(i.keyNo.toString());
