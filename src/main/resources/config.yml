@@ -111,6 +111,9 @@ effects:
     name: Vulture's Hunger
     description: Hunger effect at random intervals.
     type: 2
+    loop-duration: 240
+    slice-off-hunger-level: 4 # max is 20. 4 means it slices off 2 bars of the hunger so the eqn is no.of.hungerBar x 2 = theValueYouNeedToPutInHere
+    # maximum amplifier is 3 so it will multiply automatically.. like level 1 takes off 2 hunger bars, level two takes off 4 and level three takes off 6 bars.
   28:
     name: Scorpion's Sting
     description: Randomly inflicts instant damage.

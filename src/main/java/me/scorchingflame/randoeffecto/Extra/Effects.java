@@ -3,11 +3,11 @@ package me.scorchingflame.randoeffecto.Extra;
 import org.bukkit.potion.PotionEffectType;
 
 public class Effects {
-    Integer id;
-    PotionEffectType potionEffectType;
-    boolean customEffect;
-    Integer amplifier;
-    Integer duration;
+    private final Integer id;
+    private final PotionEffectType potionEffectType;
+    private final boolean customEffect;
+    private final Integer amplifier;
+    private final Integer duration;
 
     public Effects(Integer id, PotionEffectType potionEffectType, Integer amplifier){
         this.id = id;
@@ -39,5 +39,25 @@ public class Effects {
         this.amplifier = amplifier;
         this.duration = -1;
         this.customEffect = true;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public PotionEffectType getPotionEffectType() {
+        return potionEffectType;
+    }
+
+    public boolean isCustomEffect() {
+        return customEffect;
+    }
+
+    public Integer getAmplifier() {
+        return amplifier;
+    }
+
+    public Integer getDuration() {
+        return duration;
     }
 }
