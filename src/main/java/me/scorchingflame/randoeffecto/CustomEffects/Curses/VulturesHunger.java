@@ -18,15 +18,38 @@ public class VulturesHunger {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
             for (Player p :
                  currentVultureHungerHolders.keySet()) {
-                if (p.isOnline()){
-                    int hungerToTake = takeAway * (currentVultureHungerHolders.get(p).getAmplifier() + 1);
-                    int foodLevelAfter = p.getFoodLevel() - hungerToTake;
+                if (p.isOnline() && currentVultureHungerHolders.get(p).getAmplifier() == 0){
+                    int foodLevelAfter = p.getFoodLevel() - takeAway;
                     if (foodLevelAfter > 2){
                         p.setFoodLevel(foodLevelAfter);
                         p.playSound(p, Sound.ENTITY_PHANTOM_BITE, 1f, 1f);
                     }
                 }
             }
-        }, 0, 20 * plugin.getConfig().getLong("effects.27.loop-duration"));
+        }, 0, 20 * plugin.getConfig().getLong("effects.27.loop-duration-level-1"));
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p :
+                    currentVultureHungerHolders.keySet()) {
+                if (p.isOnline() && currentVultureHungerHolders.get(p).getAmplifier() == 1){
+                    int foodLevelAfter = p.getFoodLevel() - takeAway;
+                    if (foodLevelAfter > 2){
+                        p.setFoodLevel(foodLevelAfter);
+                        p.playSound(p, Sound.ENTITY_PHANTOM_BITE, 1f, 1f);
+                    }
+                }
+            }
+        }, 0, 20 * plugin.getConfig().getLong("effects.27.loop-duration-level-2"));
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p :
+                    currentVultureHungerHolders.keySet()) {
+                if (p.isOnline() && currentVultureHungerHolders.get(p).getAmplifier() == 2){
+                    int foodLevelAfter = p.getFoodLevel() - takeAway;
+                    if (foodLevelAfter > 2){
+                        p.setFoodLevel(foodLevelAfter);
+                        p.playSound(p, Sound.ENTITY_PHANTOM_BITE, 1f, 1f);
+                    }
+                }
+            }
+        }, 0, 20 * plugin.getConfig().getLong("effects.27.loop-duration-level-3"));
     }
 }

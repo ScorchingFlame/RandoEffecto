@@ -30,6 +30,17 @@ commands:
          usage: /<command>
          permission: randoeffecto.test
 
+   addEffect:
+      description: Adds you to custom effect.
+      usage: /addEffect <custom-effect-id> <amplifier (1-3)>
+      permission: randoeffecto.test
+
+   removeEffect:
+         description: Removes you from custom effect.
+         usage: /removeEffect <custom-effect-id> <amplifier (1-3)>
+         permission: randoeffecto.test
+
+
 permissions:
     randoeffecto.reloadPlayerData:
         description: Allows you to reload player data

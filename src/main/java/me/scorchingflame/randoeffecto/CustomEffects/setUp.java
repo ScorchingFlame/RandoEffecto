@@ -20,7 +20,7 @@ public class setUp {
         ScorpionSting.setUp();
         CerberusBite.setUp();
         WitchesBrew.setUp();
-        // Curse of curses
+        CurseOfCurses.setUp();
         MothBlindness.setUp();
         Karma.setUp();
         ToadNausea.setUp();

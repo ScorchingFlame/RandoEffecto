@@ -1,5 +1,6 @@
 package me.scorchingflame.randoeffecto.Extra;
 
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class Effects {
@@ -11,6 +12,7 @@ public class Effects {
     // TODO: Make the storage as json with the help of GSON and use the variable like Map<Player, List<Effects>> and save it
     public Effects(Integer id, PotionEffectType potionEffectType, Integer amplifier){
         this.id = id;
+
         this.potionEffectType = potionEffectType;
         this.amplifier = amplifier;
         this.duration = -1;

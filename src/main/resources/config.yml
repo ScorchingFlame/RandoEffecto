@@ -63,23 +63,30 @@ effects:
     description: Resistance effect.
     type: 1
   16:
+  # no amp
     name: Master Miner
     description: Silk Hands effect (Rank Locked).
     type: 1
   17:
+  #Amplifier affects the level of the enchantment
     name: Soul Strider
     description: Soul speed effect for boots.
     type: 1
   18:
+  #Amplifier affects the level of the enchantment
     name: Fortunate Explorer
     description: Fortune effect for pickaxes.
     type: 1
   19:
+  # Amplifier affects the loop duration
     name: Fireworks Fanatic
     description: Random firework effect.
     type: 1
-    loop-duration: 240 # in seconds
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
   20:
+  # Amplifier affects the effect's strength
     name: Venomous bite
     description: Occasionally poisons the player's target with attacks.
     type: 1
@@ -108,17 +115,22 @@ effects:
     description: Bad luck effect
     type: 2
   27:
+  # Amp affects the duration of loop
     name: Vulture's Hunger
     description: Hunger effect at random intervals.
     type: 2
-    loop-duration: 240
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
     slice-off-hunger-level: 4 # max is 20. 4 means it slices off 2 bars of the hunger so the eqn is no.of.hungerBar x 2 = theValueYouNeedToPutInHere
-    # maximum amplifier is 3 so it will multiply automatically.. like level 1 takes off 2 hunger bars, level two takes off 4 and level three takes off 6 bars.
   28:
+  # Amp affects the duration of loop
     name: Scorpion's Sting
     description: Randomly inflicts instant damage.
     type: 2
-    loop-duration: 240
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
   29:
     name: Cerberus' Bite
     description: Reduces total hearts by 2 and stacks with more effects.
@@ -132,9 +144,11 @@ effects:
     loop-duration: 240
     effect-duration: 3 # in seconds
   31:
+    # No amplifier
     name: Curse of curses
     description: Adds curse of binding or curse of vanishing to tools or armor of the user.
     type: 2
+    hard-lock-till-deaths: 20
   32:
     # Amplifier of this effect affects the duration of loops. Max amplifier is 3
     name: Moth's Blindness

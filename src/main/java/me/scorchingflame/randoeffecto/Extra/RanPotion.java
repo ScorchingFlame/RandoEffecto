@@ -7,4 +7,12 @@ public class RanPotion {
         this.potion = potion1;
         this.keyNo = keyNo1;
     }
+
+    public Effects getPotion() {
+        return potion;
+    }
+
+    public Integer getKeyNo() {
+        return keyNo;
+    }
 }

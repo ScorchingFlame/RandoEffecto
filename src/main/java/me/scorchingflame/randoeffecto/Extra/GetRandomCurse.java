@@ -2,8 +2,7 @@ package me.scorchingflame.randoeffecto.Extra;
 
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class GetRandomCurse {
     public static Map<Integer, Effects> Curse = new HashMap<>();
@@ -26,5 +25,12 @@ public class GetRandomCurse {
         Curse.put(36, new Effects(36, 0));
         Curse.put(37, new Effects(37, 0));
         Curse.put(38, new Effects(38, 0));
+    }
+    public static RanPotion getRandomCurse(){
+        Random random = new Random();
+        List<Integer> keys = new ArrayList<Integer>(Curse.keySet());
+        Integer randomKey = keys.get(random.nextInt(keys.size()));
+        Effects curse = Curse.get(randomKey);
+        return new RanPotion(randomKey, curse);
     }
 }
