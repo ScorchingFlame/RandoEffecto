@@ -17,17 +17,46 @@ public class WitchesBrew {
         Randoeffecto plugin = Randoeffecto.getPlugin();
         int durationOfEffect = plugin.getConfig().getInt("effects.30.effect-duration") * 20;
         Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            plugin.getLogger().info("Withes brew level 1");
             for (Player p:
                  currentWitchHolder.keySet()) {
-                if (p.isOnline()){
+                if (p.isOnline() && currentWitchHolder.get(p).getAmplifier() == 0){
                     Random random = new Random();
                     if (random.nextBoolean()){
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, durationOfEffect, currentWitchHolder.get(p).getAmplifier(), false, false, false));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, durationOfEffect,0, true, true, true));
                     }else {
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, durationOfEffect, currentWitchHolder.get(p).getAmplifier(), false, false, false));
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, durationOfEffect,0, true, true, true));
                     }
                 }
             }
-        }, 0, plugin.getConfig().getLong("effects.30.loop-duration") * 20);
+        }, 0, plugin.getConfig().getLong("effects.30.loop-duration-level-1") * 20);
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            plugin.getLogger().info("Withes brew level 2");
+            for (Player p:
+                    currentWitchHolder.keySet()) {
+                if (p.isOnline() && currentWitchHolder.get(p).getAmplifier() == 1){
+                    Random random = new Random();
+                    if (random.nextBoolean()){
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, durationOfEffect,0, true, true, true));
+                    }else {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, durationOfEffect,0, true, true, true));
+                    }
+                }
+            }
+        }, 0, plugin.getConfig().getLong("effects.30.loop-duration-level-2") * 20);
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            plugin.getLogger().info("Withes brew level 3");
+            for (Player p:
+                    currentWitchHolder.keySet()) {
+                if (p.isOnline() && currentWitchHolder.get(p).getAmplifier() == 2){
+                    Random random = new Random();
+                    if (random.nextBoolean()){
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, durationOfEffect,0, true, true, true));
+                    }else {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, durationOfEffect,0, true, true, true));
+                    }
+                }
+            }
+        }, 0, plugin.getConfig().getLong("effects.30.loop-duration-level-3") * 20);
     }
 }

@@ -1,30 +1,39 @@
 package me.scorchingflame.randoeffecto.Extra;
 
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class Effects {
-    private final Integer id;
-    private final PotionEffectType potionEffectType;
-    private final boolean customEffect;
-    private final Integer amplifier;
-    private final Integer duration;
+    private Integer id;
+    private String potionEffectType;
+    private boolean customEffect;
+    private Integer amplifier;
+    private Integer duration;
+    private Integer type = null;
     // TODO: Make the storage as json with the help of GSON and use the variable like Map<Player, List<Effects>> and save it
-    public Effects(Integer id, PotionEffectType potionEffectType, Integer amplifier){
+    public Effects(Integer id, String potionEffectType, Integer amplifier){
         this.id = id;
 
         this.potionEffectType = potionEffectType;
         this.amplifier = amplifier;
         this.duration = -1;
         this.customEffect = false;
+        if (id <= 20){
+            this.type = 1;
+        }else {
+            this.type = 2;
+        }
     }
 
-    public Effects(Integer id, PotionEffectType potionEffectType, Integer amplifier, Integer duration){
+    public Effects(Integer id, String potionEffectType, Integer amplifier, Integer duration){
         this.id = id;
         this.potionEffectType = potionEffectType;
         this.amplifier = amplifier;
         this.duration = duration;
         this.customEffect = false;
+        if (id <= 20){
+            this.type = 1;
+        }else {
+            this.type = 2;
+        }
     }
 
     public Effects(Integer id, Integer amplifier, Integer duration){
@@ -33,6 +42,15 @@ public class Effects {
         this.amplifier = amplifier;
         this.duration = duration;
         this.customEffect = true;
+        if (id <= 20){
+            this.type = 1;
+        }else {
+            this.type = 2;
+        }
+    }
+
+    public Integer getType() {
+        return type;
     }
 
     public Effects(Integer id, Integer amplifier){
@@ -41,13 +59,18 @@ public class Effects {
         this.amplifier = amplifier;
         this.duration = -1;
         this.customEffect = true;
+        if (id <= 20){
+            this.type = 1;
+        }else {
+            this.type = 2;
+        }
     }
 
     public Integer getId() {
         return id;
     }
 
-    public PotionEffectType getPotionEffectType() {
+    public String getPotionEffectType() {
         return potionEffectType;
     }
 
@@ -61,5 +84,29 @@ public class Effects {
 
     public Integer getDuration() {
         return duration;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setPotionEffectType(String potionEffectType) {
+        this.potionEffectType = potionEffectType;
+    }
+
+    public void setCustomEffect(boolean customEffect) {
+        this.customEffect = customEffect;
+    }
+
+    public void setAmplifier(Integer amplifier) {
+        this.amplifier = amplifier;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

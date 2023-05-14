@@ -13,7 +13,6 @@ import java.util.*;
 
 public final class Randoeffecto extends JavaPlugin {
     private static Randoeffecto plugin;
-    public static PlayerData playerDataF;
     public static crudGSON crudGSON;
     public static Map<String, List<List<Effects>>> playerData = new HashMap<>();
     @Override
@@ -30,7 +29,6 @@ public final class Randoeffecto extends JavaPlugin {
         GetRandomCurse.setCurse();
         setUp.setUpEffects();
         getLogger().info("Plugin Enabled!");
-        playerDataF = new PlayerData().setPath(this, "playerData/playerData.yml");
         getServer().getPluginManager().registerEvents(new PlayerFirstJoin(), this);
 
         Objects.requireNonNull(getCommand("reloadPlayerData")).setExecutor(new reloadPlayerData());

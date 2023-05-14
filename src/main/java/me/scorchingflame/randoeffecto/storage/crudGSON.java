@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,8 @@ public class crudGSON {
             if (map != null){
                 Randoeffecto.playerData = map;
                 plugin.getLogger().info("Successfully loaded player data from " + path);
+            }else{
+                plugin.getLogger().info("No data found from " + path);
             }
 
         }
@@ -44,13 +47,18 @@ public class crudGSON {
         gson.toJson(Randoeffecto.playerData, new TypeToken<Map<String, List<List<Effects>>>>(){}.getType() ,writer);
         writer.flush();
         writer.close();
-        plugin.getLogger().info("Saved successfully");
     }
 
     public void reload() throws FileNotFoundException {
         Reader reader = new FileReader(file);
         plugin.getLogger().info("Reloading data from " + path);
-        Randoeffecto.playerData = gson.fromJson(reader, new TypeToken<Map<String, List<List<Effects>>>>(){}.getType());
-        plugin.getLogger().info("Successfully reloaded player data from " + path);
+        Map<String, List<List<Effects>>> map = gson.fromJson(reader, new TypeToken<Map<String, List<List<Effects>>>>(){}.getType());
+        if (map != null){
+            Randoeffecto.playerData = map;
+            plugin.getLogger().info("Successfully reloaded player data from " + path);
+        }else{
+            Randoeffecto.playerData = new HashMap<>();
+            plugin.getLogger().info("No Data found from " + path);
+        }
     }
 }

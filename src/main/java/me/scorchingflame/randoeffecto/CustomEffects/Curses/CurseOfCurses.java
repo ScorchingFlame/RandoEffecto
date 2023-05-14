@@ -17,6 +17,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 import java.util.Map;
 
+import static me.scorchingflame.randoeffecto.Randoeffecto.playerData;
+
 public class CurseOfCurses {
     public static Map<Player, Effects> currentCurseHolders = new HashMap<>();
     private static Randoeffecto plugin;
@@ -27,6 +29,7 @@ public class CurseOfCurses {
     public static void addEffect(Player player, Effects effects){
         if (player.getStatistic(Statistic.DEATHS) >= plugin.getConfig().getInt("effects.31.hard-lock-till-deaths")){
             currentCurseHolders.put(player, effects);
+            playerData.get(player.getUniqueId().toString()).get(1).add(effects);
         }else {
             ApplyEffect.applyEffect(player, GetRandomCurse.getRandomCurse().getPotion());
         }

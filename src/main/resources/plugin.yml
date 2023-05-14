@@ -49,3 +49,6 @@ permissions:
     randoeffecto.test:
         description: just testing purposes
         default: op
+
+    randoeffecto.blessings.silkTouch:
+        description: Allows the user to being able to get the silk touch custom effect

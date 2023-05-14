@@ -7,12 +7,12 @@ import java.util.*;
 public class GetRandomCurse {
     public static Map<Integer, Effects> Curse = new HashMap<>();
     public static void setCurse(){
-        Curse.put(21, new Effects(21, PotionEffectType.SLOW, 0));
-        Curse.put(22, new Effects(22, PotionEffectType.SLOW_FALLING, 0));
-        Curse.put(23, new Effects(23, PotionEffectType.UNLUCK, 0));
-        Curse.put(24, new Effects(24, PotionEffectType.GLOWING, 0));
-        Curse.put(25, new Effects(25, PotionEffectType.WEAKNESS, 0));
-        Curse.put(26, new Effects(26, PotionEffectType.UNLUCK, 0));
+        Curse.put(21, new Effects(21, PotionEffectType.SLOW.getName(), 0));
+        Curse.put(22, new Effects(22, PotionEffectType.SLOW_FALLING.getName(), 0));
+        Curse.put(23, new Effects(23, PotionEffectType.UNLUCK.getName(), 0));
+        Curse.put(24, new Effects(24, PotionEffectType.GLOWING.getName(), 0));
+        Curse.put(25, new Effects(25, PotionEffectType.WEAKNESS.getName(), 0));
+        Curse.put(26, new Effects(26, PotionEffectType.UNLUCK.getName(), 0));
         Curse.put(27, new Effects(27, 0));
         Curse.put(28, new Effects(28, 0));
         Curse.put(29, new Effects(29, 0));

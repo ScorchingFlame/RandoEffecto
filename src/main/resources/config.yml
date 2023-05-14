@@ -137,12 +137,14 @@ effects:
     type: 2
     hearts-take-away: 2
   30:
-    # Amplifier of this effect affects the effect's strength
+    # Amplifier of this effect affects the loop's duration
     name: Witch's Brew
     description: Randomly inflicts either wither or poison for 3 seconds.
     type: 2
-    loop-duration: 240
-    effect-duration: 3 # in seconds
+    loop-duration-level-1: 240
+    loop-duration-level-2: 180
+    loop-duration-level-3: 120
+    effect-duration: 10 # in seconds
   31:
     # No amplifier
     name: Curse of curses
