@@ -13,36 +13,27 @@ public class SlipperyHands {
     public static Map<Player, Effects> currentSlipperyHandPeople = new HashMap<>();
     public static void setUp(){
         Randoeffecto plugin = Randoeffecto.getPlugin();
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player player:
-                        currentSlipperyHandPeople.keySet()) {
-                    if (currentSlipperyHandPeople.get(player).getAmplifier() == 0 && player.isOnline()){
-                        dropHeldItem(player);
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player player:
+                    currentSlipperyHandPeople.keySet()) {
+                if (currentSlipperyHandPeople.get(player).getAmplifier() == 0 && player.isOnline()){
+                    dropHeldItem(player);
                 }
             }
         }, 0, plugin.getConfig().getLong("effects.38.loop-duration-level-1") * 20);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player player:
-                        currentSlipperyHandPeople.keySet()) {
-                    if (currentSlipperyHandPeople.get(player).getAmplifier() == 1 && player.isOnline()){
-                        dropHeldItem(player);
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player player:
+                    currentSlipperyHandPeople.keySet()) {
+                if (currentSlipperyHandPeople.get(player).getAmplifier() == 1 && player.isOnline()){
+                    dropHeldItem(player);
                 }
             }
         }, 0, plugin.getConfig().getLong("effects.38.loop-duration-level-2") * 20);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player player:
-                        currentSlipperyHandPeople.keySet()) {
-                    if (currentSlipperyHandPeople.get(player).getAmplifier() == 2 && player.isOnline()){
-                        dropHeldItem(player);
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player player:
+                    currentSlipperyHandPeople.keySet()) {
+                if (currentSlipperyHandPeople.get(player).getAmplifier() == 2 && player.isOnline()){
+                    dropHeldItem(player);
                 }
             }
         }, 0, plugin.getConfig().getLong("effects.38.loop-duration-level-3") * 20);

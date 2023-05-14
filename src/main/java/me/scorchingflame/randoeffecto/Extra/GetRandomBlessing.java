@@ -32,7 +32,7 @@ public class GetRandomBlessing {
 
     public static RanPotion getRandomBlessing(){
         Random random = new Random();
-        List<Integer> keys = new ArrayList<Integer>(blessing.keySet());
+        List<Integer> keys = new ArrayList<>(blessing.keySet());
         Integer randomKey = keys.get(random.nextInt(keys.size()));
         Effects bles = blessing.get(randomKey);
         return new RanPotion(randomKey, bles);

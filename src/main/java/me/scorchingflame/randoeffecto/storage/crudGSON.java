@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import me.scorchingflame.randoeffecto.Extra.Effects;
 import me.scorchingflame.randoeffecto.Randoeffecto;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.io.*;

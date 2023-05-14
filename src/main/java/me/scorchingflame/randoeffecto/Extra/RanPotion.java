@@ -11,8 +11,4 @@ public class RanPotion {
     public Effects getPotion() {
         return potion;
     }
-
-    public Integer getKeyNo() {
-        return keyNo;
-    }
 }

@@ -4,10 +4,8 @@ import me.scorchingflame.randoeffecto.CustomEffects.setUp;
 import me.scorchingflame.randoeffecto.Extra.*;
 import me.scorchingflame.randoeffecto.commands.*;
 import me.scorchingflame.randoeffecto.storage.crudGSON;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 

@@ -15,36 +15,27 @@ public class MothBlindness {
     public static void setUp(){
         Randoeffecto plugin = Randoeffecto.getPlugin();
         int effectDuration = plugin.getConfig().getInt("effects.32.effect-duration");
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player p:
-                     currentMothHolders.keySet()) {
-                    if (currentMothHolders.get(p).getAmplifier() == 0 && p.isOnline()){
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p:
+                 currentMothHolders.keySet()) {
+                if (currentMothHolders.get(p).getAmplifier() == 0 && p.isOnline()){
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
                 }
             }
         }, 0 , plugin.getConfig().getLong("effects.32.loop-duration-level-1") * 20);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player p:
-                        currentMothHolders.keySet()) {
-                    if (currentMothHolders.get(p).getAmplifier() == 1 && p.isOnline()){
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p:
+                    currentMothHolders.keySet()) {
+                if (currentMothHolders.get(p).getAmplifier() == 1 && p.isOnline()){
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
                 }
             }
         }, 0 , plugin.getConfig().getLong("effects.32.loop-duration-level-2") * 20);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player p:
-                        currentMothHolders.keySet()) {
-                    if (currentMothHolders.get(p).getAmplifier() == 2 && p.isOnline()){
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p:
+                    currentMothHolders.keySet()) {
+                if (currentMothHolders.get(p).getAmplifier() == 2 && p.isOnline()){
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, effectDuration, 0, false, false, false));
                 }
             }
         }, 0 , plugin.getConfig().getLong("effects.32.loop-duration-level-3") * 20);

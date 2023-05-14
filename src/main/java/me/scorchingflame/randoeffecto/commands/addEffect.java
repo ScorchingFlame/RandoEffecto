@@ -1,7 +1,6 @@
 package me.scorchingflame.randoeffecto.commands;
 
-import me.scorchingflame.randoeffecto.Extra.ApplyEffect;
-import me.scorchingflame.randoeffecto.Extra.Effects;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

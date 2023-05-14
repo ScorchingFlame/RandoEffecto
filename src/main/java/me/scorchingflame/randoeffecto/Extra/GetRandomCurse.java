@@ -28,7 +28,7 @@ public class GetRandomCurse {
     }
     public static RanPotion getRandomCurse(){
         Random random = new Random();
-        List<Integer> keys = new ArrayList<Integer>(Curse.keySet());
+        List<Integer> keys = new ArrayList<>(Curse.keySet());
         Integer randomKey = keys.get(random.nextInt(keys.size()));
         Effects curse = Curse.get(randomKey);
         return new RanPotion(randomKey, curse);

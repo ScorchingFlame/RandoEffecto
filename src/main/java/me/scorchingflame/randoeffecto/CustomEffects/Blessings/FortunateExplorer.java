@@ -13,7 +13,6 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 import java.util.Map;
 
-import static me.scorchingflame.randoeffecto.Extra.Boots.materialListOfBoots;
 
 public class FortunateExplorer implements Listener {
     public static Map<Player, Effects> currentFortuneHolders = new HashMap<>();

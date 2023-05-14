@@ -19,15 +19,12 @@ public class BatConfusion {
         int max = plugin.getConfig().getInt("effects.35.max");
         Random random = new Random();
         int durationTemplate = max - min + 1;
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player p:
-                     currentBatConfusionHolder.keySet()) {
-                    if (p.isOnline()){
-                        int duration = random.nextInt(durationTemplate) + min;
-                        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, duration, 0, false, false, false));
-                    }
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            for (Player p:
+                 currentBatConfusionHolder.keySet()) {
+                if (p.isOnline()){
+                    int duration = random.nextInt(durationTemplate) + min;
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, duration, 0, false, false, false));
                 }
             }
         }, 0, plugin.getConfig().getLong("effects.35.loop-duration") * 20);

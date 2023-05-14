@@ -2,12 +2,12 @@ package me.scorchingflame.randoeffecto.Extra;
 
 
 public class Effects {
-    private Integer id;
-    private String potionEffectType;
-    private boolean customEffect;
-    private Integer amplifier;
-    private Integer duration;
-    private Integer type = null;
+    private final Integer id;
+    private final String potionEffectType;
+    private final boolean customEffect;
+    private final Integer amplifier;
+    private final Integer duration;
+    private final Integer type;
     // TODO: Make the storage as json with the help of GSON and use the variable like Map<Player, List<Effects>> and save it
     public Effects(Integer id, String potionEffectType, Integer amplifier){
         this.id = id;
@@ -84,29 +84,5 @@ public class Effects {
 
     public Integer getDuration() {
         return duration;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setPotionEffectType(String potionEffectType) {
-        this.potionEffectType = potionEffectType;
-    }
-
-    public void setCustomEffect(boolean customEffect) {
-        this.customEffect = customEffect;
-    }
-
-    public void setAmplifier(Integer amplifier) {
-        this.amplifier = amplifier;
-    }
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
     }
 }
