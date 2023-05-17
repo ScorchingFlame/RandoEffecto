@@ -4,43 +4,6 @@ main: me.scorchingflame.randoeffecto.Randoeffecto
 api-version: 1.19
 authors: [ScorchingFlame]
 description: idk bruv
-commands:
-   reloadPlayerData:
-      description: Reloads Player Data
-      usage: /<command>
-      permission: randoeffecto.reloadPlayerData
-
-   addMeSilk:
-      description: Adds you to the silk touch list
-      usage: /<command>
-      permission: randoeffecto.test
-
-   removeMeSilk:
-         description: removes you to the silk touch list
-         usage: /<command>
-         permission: randoeffecto.test
-
-   addMeSoul:
-         description: Adds you to the soul list
-         usage: /<command>
-         permission: randoeffecto.test
-
-   removeMeSoul:
-         description: removes you to the soul list
-         usage: /<command>
-         permission: randoeffecto.test
-
-   addEffect:
-      description: Adds you to custom effect.
-      usage: /addEffect <custom-effect-id> <amplifier (1-3)>
-      permission: randoeffecto.test
-
-   removeEffect:
-         description: Removes you from custom effect.
-         usage: /removeEffect <custom-effect-id> <amplifier (1-3)>
-         permission: randoeffecto.test
-
-
 permissions:
     randoeffecto.reloadPlayerData:
         description: Allows you to reload player data
@@ -50,5 +13,21 @@ permissions:
         description: just testing purposes
         default: op
 
+    randoeffecto.myeffects:
+        description: Permission for the command myeffects.
+        default: true
+
     randoeffecto.blessings.silkTouch:
         description: Allows the user to being able to get the silk touch custom effect
+
+    randoeffecto.admin.addeffects:
+        description: Allows the user to add effects .
+        default: op
+
+    randoeffecto.admin.removeeffects:
+        description: Allows the user to remove effects.
+        default: op
+
+    randoeffecto.admin.vieweffects:
+        description: Allows the user to check other player's effect
+        default: op

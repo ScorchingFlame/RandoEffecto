@@ -188,4 +188,88 @@ public class ApplyEffect {
             e.printStackTrace();
         }
     }
+
+    public static void applyEffectWithoutSave(Player player, Effects effects){
+        if (effects.getPotionEffectType() != null){
+            player.addPotionEffect(new PotionEffect(Objects.requireNonNull(PotionEffectType.getByName(effects.getPotionEffectType())), effects.getDuration(), effects.getAmplifier(), false, false, false));
+//            playerData.get(player.getUniqueId().toString()).get(effects.getType() - 1).add(effects);
+        }else{
+            Integer id = effects.getId();
+            switch (id){
+                case 16:
+                    if (player.hasPermission("randoeffecto.blessings.silkTouch")){
+                        if (!currentSilkHolders.contains(player)){
+                            currentSilkHolders.add(player);
+                        }
+//                        playerData.get(player.getUniqueId().toString()).get(0).add(effects);
+                    }else {
+                        applyEffect(player,GetRandomBlessing.getRandomBlessing().potion);
+                    }
+                    break;
+                case 17:
+                    currentSoulHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(0).add(effects);
+                    break;
+                case 18:
+                    FortunateExplorer.currentFortuneHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(0).add(effects);
+                    break;
+                case 19:
+                    FireworksFanatic.currentFireworkHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(0).add(effects);
+                    break;
+                case 20:
+                    PoisonAttackEntity.currentPoisonAttackEntityHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(0).add(effects);
+                    break;
+                case 27:
+                    VulturesHunger.currentVultureHungerHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 28:
+                    ScorpionSting.currentStingHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 29:
+                    CerberusBite.addEffect(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 30:
+                    WitchesBrew.currentWitchHolder.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 31:
+                    CurseOfCurses.addEffect(player, effects); // effect to playerData is added inside the function
+                    break;
+                case 32:
+                    MothBlindness.currentMothHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 33:
+                    Karma.currentKarmaHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 34:
+                    ToadNausea.currentNauseaHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 35:
+                    BatConfusion.currentBatConfusionHolder.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 36:
+                    CurseOfInsanity.currentInsanityHolders.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 37:
+                    ZeusNemesis.currentZeusEnemies.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+                case 38:
+                    SlipperyHands.currentSlipperyHandPeople.put(player, effects);
+//                    playerData.get(player.getUniqueId().toString()).get(1).add(effects);
+                    break;
+            }
+        }
+    }
 }

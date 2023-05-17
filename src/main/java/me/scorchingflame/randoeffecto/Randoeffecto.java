@@ -2,8 +2,13 @@ package me.scorchingflame.randoeffecto;
 
 import me.scorchingflame.randoeffecto.CustomEffects.setUp;
 import me.scorchingflame.randoeffecto.Extra.*;
+import me.scorchingflame.randoeffecto.Miscellaneous.playerHeadsSetUp;
 import me.scorchingflame.randoeffecto.commands.*;
+import me.scorchingflame.randoeffecto.config.configSetUp;
+import me.scorchingflame.randoeffecto.events.PlayerFirstJoin;
+import me.scorchingflame.randoeffecto.events.PlayerLeaveEvent;
 import me.scorchingflame.randoeffecto.storage.crudGSON;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -18,6 +23,8 @@ public final class Randoeffecto extends JavaPlugin {
         plugin = this;
         // Plugin startup logic
         saveDefaultConfig();
+        playerHeadsSetUp.setUp();
+        configSetUp.setUp(getConfig());
         try {
             crudGSON = new crudGSON().setUp("playerData/playerData.json", this);
         } catch (IOException e) {
@@ -28,12 +35,24 @@ public final class Randoeffecto extends JavaPlugin {
         setUp.setUpEffects();
         getLogger().info("Plugin Enabled!");
         getServer().getPluginManager().registerEvents(new PlayerFirstJoin(), this);
+        getServer().getPluginManager().registerEvents(new PlayerLeaveEvent(), this);
 
-        Objects.requireNonNull(getCommand("reloadPlayerData")).setExecutor(new reloadPlayerData());
-        Objects.requireNonNull(getCommand("addMeSilk")).setExecutor(new addMeSilk());
-        Objects.requireNonNull(getCommand("removeMeSilk")).setExecutor(new removeMeSilk());
-        Objects.requireNonNull(getCommand("addEffect")).setExecutor(new addEffect());
-        Objects.requireNonNull(getCommand("removeEffect")).setExecutor(new removeEffect());
+        myEffects.setUp();
+        RandomEffectCommands.setUp();
+
+        for (Player p:
+             getServer().getOnlinePlayers()) {
+            for (List<Effects> listPlayer:
+                 playerData.get(p.getUniqueId().toString())) {
+                for (Effects effects:
+                     listPlayer) {
+                    if (effects.isCustomEffect()){
+                        ApplyEffect.applyEffectWithoutSave(p,effects);
+                    }
+                }
+            }
+        }
+
     }
 
     @Override

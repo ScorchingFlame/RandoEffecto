@@ -1,5 +1,9 @@
-package me.scorchingflame.randoeffecto.Extra;
+package me.scorchingflame.randoeffecto.events;
 
+import me.scorchingflame.randoeffecto.Extra.ApplyEffect;
+import me.scorchingflame.randoeffecto.Extra.Effects;
+import me.scorchingflame.randoeffecto.Extra.GetRandomBlessing;
+import me.scorchingflame.randoeffecto.Extra.GetRandomCurse;
 import me.scorchingflame.randoeffecto.Randoeffecto;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,9 +26,16 @@ public class PlayerFirstJoin implements Listener {
             Randoeffecto.playerData.put(event.getPlayer().getUniqueId().toString(), listList);
             Random random = new Random();
             if (random.nextBoolean()){
-                ApplyEffect.applyEffect(event.getPlayer(), GetRandomBlessing.getRandomBlessing().potion);
+                ApplyEffect.applyEffect(event.getPlayer(), GetRandomBlessing.getRandomBlessing().getPotion());
             }else {
-                ApplyEffect.applyEffect(event.getPlayer(), GetRandomCurse.getRandomCurse().potion);
+                ApplyEffect.applyEffect(event.getPlayer(), GetRandomCurse.getRandomCurse().getPotion());
+            }
+        }else{
+            for (List<Effects> effectsList : Randoeffecto.playerData.get(event.getPlayer().getUniqueId().toString())){
+                for (Effects effects:
+                     effectsList) {
+                    ApplyEffect.applyEffectWithoutSave(event.getPlayer(), effects);
+                }
             }
         }
     }
